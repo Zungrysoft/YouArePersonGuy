@@ -84,7 +84,7 @@ export default class TitleScreen extends Thing {
     if (this.timers.transition) {
       ctx.globalAlpha = u.map(this.timer('transition'), 0, 1, 0.75, 0, true)
     }
-    ctx.fillText('Created by ZungryWare and Groverburger in 48 hours for GMTK 2023', 0, 0)
+    ctx.fillText('Created by ZungryWare and Groverburger', 0, 0)
     ctx.restore()
   }
 }

@@ -221,6 +221,7 @@ await game.loadAssets({
     blobdependencies: 'json/levels/blobdependencies.json',
     voidandmagnet: 'json/levels/voidandmagnet.json',
     voidandice: 'json/levels/voidandice.json',
+    blobvoid: 'json/levels/blobvoid.json',
   },
 
   sounds: {
@@ -295,7 +296,7 @@ if (localStorage.personGuyVersion === '2') {
 }
 localStorage.personGuyVersion = '2'
 
-document.title = `You Are Person ${game.globals.settings.noun ?? 'Guy'}`
+document.title = `You Are Person ${game.globals?.settings?.noun ?? 'Guy'}`
 
 // Apply initial settings
 soundmanager.setMusicVolume(game.globals.settings.musicOn ? 1 : 0)
