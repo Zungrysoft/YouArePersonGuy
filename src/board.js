@@ -1068,6 +1068,15 @@ export default class Board extends Thing {
     return false
   }
 
+  isPhaseBlocking(thing) {
+    if (thing.name === 'deco') {
+      if (['vine'].includes(thing.type)) {
+        return true
+      }
+    }
+    return false
+  }
+
   executeVoid(player, newlyPhasedOut, totalPhasedOut) {
     // Cancel if dead or phased out
     if (player.dead || player.phasedOut) {
@@ -1104,12 +1113,17 @@ export default class Board extends Thing {
       }
 
       // Found a thing to phase
-      const foundThing = this.state.things.filter(x => vec2.equals(curPos, x.position) && this.isPhaseable(x))[0]
+      const foundThing = this.state.things.filter(x => vec2.equals(curPos, x.position) && (this.isPhaseable(x) || this.isPhaseBlocking(x)))[0]
       if (foundThing) {
-        newlyPhasedOut.add(foundThing.id)
-        totalPhasedOut.add(foundThing.id)
-        this.phaseOut(foundThing)
-        break
+        if (this.isPhaseBlocking(foundThing)) {
+          return
+        }
+        else {
+          newlyPhasedOut.add(foundThing.id)
+          totalPhasedOut.add(foundThing.id)
+          this.phaseOut(foundThing)
+          break
+        }
       }
     }
   }

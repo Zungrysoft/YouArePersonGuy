@@ -811,7 +811,28 @@
     {
       "isKey": true,
       "keyName": "voidKey1",
+      "position": [-2, 3],
+      "anchor": "void"
+    },
+    {
+      "isPath": true,
       "position": [-2, 1],
+      "anchor": "void"
+    },
+    {
+      "isPath": true,
+      "position": [-2, -1],
+      "anchor": "void"
+    },
+    {
+      "isPath": true,
+      "position": [-2, -2],
+      "anchor": "void"
+    },
+    {
+      "name": "Whiplash",
+      "level": "voidcrossvine1",
+      "position": [-2, -3],
       "anchor": "void"
     },
     {
@@ -973,6 +994,12 @@
       "name": "Lend a Hand",
       "level": "blobfire",
       "position": [0, -2],
+      "anchor": "blob"
+    },
+    {
+      "name": "Whiplash II",
+      "level": "voidcrossvine2",
+      "position": [1, -2],
       "anchor": "blob"
     },
     {

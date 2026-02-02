@@ -444,7 +444,7 @@ export default class Player extends Thing {
     if (tileThing.isBlob) {
       const position = vec2.add(this.position, vec2.scale(vec2.directionToVector(tileThing.blobDirection), 60))
       ctx.save()
-      ctx.globalAlpha = 1.0
+      ctx.globalAlpha = this.alpha
       ctx.translate(...position)
       ctx.rotate(u.angleTowards(0, 0, ...vec2.directionToVector(tileThing.blobDirection)))
       ctx.translate(-32, -32)
@@ -515,8 +515,7 @@ export default class Player extends Thing {
       }
 
       // Found thing
-      const thingAtPos = board.state.things.filter(x => vec2.equals(x.position, pos))[0]
-      if ((thingAtPos && board.isPhaseable(thingAtPos)) || board.state.phasedOut[pos]) {
+      if (board.state.phasedOut[pos]) {
         game.addThing(new VoidParticle(this.tileThingReference.position, pos))
         return
       }

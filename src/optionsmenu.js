@@ -64,11 +64,11 @@ export default class OptionsMenu extends Thing {
           }
           if (this.selection === 2) {
             callback = () => {
-              const nounIndex = NOUNS.indexOf(globals.settings.noun);
+              const nounIndex = NOUNS.indexOf(globals.settings.noun ?? 'Guy');
               const newIndex = (nounIndex + 1) % NOUNS.length;
               globals.settings.noun = NOUNS[newIndex];
-              this.menu[2] = 'Noun: ' + (globals.settings.noun ?? 'Guy'),
-              document.title = `You Are Person ${game.globals.settings.noun ?? 'Guy'}`
+              this.menu[2] = 'Noun: ' + (globals.settings.noun),
+              document.title = `You Are Person ${game.globals.settings.noun}`
               localStorage.settings = JSON.stringify(globals.settings);
             }
           }

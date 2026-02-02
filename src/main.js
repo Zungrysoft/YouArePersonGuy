@@ -221,7 +221,8 @@ await game.loadAssets({
     blobdependencies: 'json/levels/blobdependencies.json',
     voidandmagnet: 'json/levels/voidandmagnet.json',
     voidandice: 'json/levels/voidandice.json',
-    blobvoid: 'json/levels/blobvoid.json',
+    voidcrossvine1: 'json/levels/voidcrossvine1.json',
+    voidcrossvine2: 'json/levels/voidcrossvine2.json',
   },
 
   sounds: {
