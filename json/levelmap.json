@@ -836,6 +836,12 @@
       "anchor": "void"
     },
     {
+      "isKey": true,
+      "keyName": "whiplashKey",
+      "position": [-2, -4],
+      "anchor": "void"
+    },
+    {
       "isLock": true,
       "lockName": "voidExitLock",
       "lockCount": 5,
